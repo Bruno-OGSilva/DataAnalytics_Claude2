@@ -1,0 +1,20 @@
+<!doctype html>
+<!-- @dsCard group="Components" name="Form fields" subtitle="Input, focus, textarea" viewport="700x230" --><html><head><meta charset="utf-8"><link rel="stylesheet" href="_card.css"><script src="https://unpkg.com/lucide@latest"></script></head><body>
+<div class="card">
+  <div class="meta">Form fields</div>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px">
+    <div>
+      <label style="display:block;font-family:var(--font-display);font-weight:600;font-size:13px;color:var(--fg1);margin-bottom:6px">Full name</label>
+      <input value="Ian Roberts" style="width:100%;padding:11px 14px;border:1px solid var(--border-strong);border-radius:8px;font-family:var(--font-body);font-size:15px;color:var(--fg1);background:white;outline:none"/>
+    </div>
+    <div>
+      <label style="display:block;font-family:var(--font-display);font-weight:600;font-size:13px;color:var(--fg1);margin-bottom:6px">Email</label>
+      <input value="hello@example.com" style="width:100%;padding:11px 14px;border:2px solid var(--dl-teal-500);border-radius:8px;font-family:var(--font-body);font-size:15px;color:var(--fg1);background:white;outline:none;box-shadow:var(--shadow-ring)"/>
+    </div>
+    <div style="grid-column:1/-1">
+      <label style="display:block;font-family:var(--font-display);font-weight:600;font-size:13px;color:var(--fg1);margin-bottom:6px">Tell us about your project</label>
+      <textarea rows="2" style="width:100%;padding:11px 14px;border:1px solid var(--border-strong);border-radius:8px;font-family:var(--font-body);font-size:15px;color:var(--fg3);background:white;outline:none;resize:none">Briefly describe what you'd like to track…</textarea>
+    </div>
+  </div>
+</div>
+<script>lucide.createIcons();</script></body></html>

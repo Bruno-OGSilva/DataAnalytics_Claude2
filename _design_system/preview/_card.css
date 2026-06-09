@@ -1,0 +1,113 @@
+/* Shared styling for the preview cards in the Design System tab.
+   Each card is ~700px wide; height varies. Keep cards minimal: the
+   asset name is rendered outside the card. */
+
+@import url("../colors_and_type.css");
+
+* { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg);
+  font-family: var(--font-body);
+}
+
+.card {
+  width: 700px;
+  padding: 24px;
+  background: var(--bg);
+  color: var(--fg1);
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.row {
+  display: flex;
+  gap: 12px;
+  align-items: stretch;
+}
+
+.col {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.swatch {
+  flex: 1;
+  height: 84px;
+  border-radius: 8px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-end;
+  padding: 10px;
+  color: white;
+  font-family: var(--font-display);
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  border: 1px solid rgba(14, 39, 71, 0.06);
+}
+
+.swatch.dark-text { color: var(--dl-navy-900); }
+
+.swatch-label {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  font-family: var(--font-display);
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.swatch-label .hex {
+  font-family: var(--font-mono);
+  font-weight: 400;
+  font-size: 10px;
+  opacity: 0.8;
+  letter-spacing: 0;
+}
+
+.meta {
+  font-family: var(--font-display);
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--fg3);
+  font-weight: 700;
+}
+
+.token {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--fg2);
+}
+
+.value {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--fg3);
+}
+
+.divider {
+  height: 1px;
+  background: var(--divider);
+  border: 0;
+  margin: 0;
+}
+
+/* tiny helper for tabular rows */
+.kv {
+  display: grid;
+  grid-template-columns: 160px 1fr auto;
+  gap: 12px;
+  align-items: center;
+  padding: 6px 0;
+  border-bottom: 1px solid var(--divider);
+  font-size: 13px;
+}
+.kv:last-child { border-bottom: 0; }
+.kv .label { font-family: var(--font-display); font-weight: 600; color: var(--fg1); font-size: 13px; }

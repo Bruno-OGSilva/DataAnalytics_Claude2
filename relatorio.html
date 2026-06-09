@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Relatório E-commerce &ndash; Dashboard Labs</title>
+  <link rel="stylesheet" href="_design_system/ui_kits/marketing-site/site.css">
+  <style>  *{box-sizing:border-box}
+  .sec{padding:80px 28px}
+  .sec--muted{background:var(--bg-brand-soft)}
+  .sec--dark{background:var(--dl-navy-900)}
+  .wrap{max-width:1200px;margin:0 auto}
+  .grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:center}
+  .grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+  .dl-kpi{padding:20px 22px}
+  .dl-kpi .dl-kpi__label{font-size:11px}
+  .dl-kpi .dl-kpi__value{font-size:26px}
+  .chart-box{position:relative;height:320px}
+  .chart-box--tall{height:400px}
+  table.t{width:100%;border-collapse:collapse;font-size:14px;background:white;
+    border-radius:12px;overflow:hidden;border:1px solid var(--border)}
+  table.t th{font-family:var(--font-display);font-size:11px;letter-spacing:.08em;
+    text-transform:uppercase;color:var(--fg3);font-weight:700;padding:12px 14px;
+    border-bottom:2px solid var(--border);text-align:left;background:var(--bg-muted)}
+  table.t td{padding:13px 14px;border-bottom:1px solid var(--divider);color:var(--fg2)}
+  table.t tr:last-child td{border-bottom:none}
+  table.t td.n{font-family:var(--font-mono);color:var(--fg1);font-weight:600}
+  table.t td.rk{font-family:var(--font-mono);font-size:12px;color:var(--fg3);
+    font-weight:700;width:32px}
+  .badge{display:inline-block;font-family:var(--font-display);font-weight:700;
+    font-size:11px;padding:3px 9px;border-radius:999px;letter-spacing:.04em}
+  .badge-up{background:#E5F6EF;color:var(--dl-green-600)}
+  .badge-dn{background:#FDEAEA;color:var(--danger)}
+  .badge-eq{background:var(--bg-subtle);color:var(--fg3)}
+  .hero-wrap{background:var(--dl-navy-900);padding:80px 28px 60px;text-align:center}
+  .hero-wrap h1{color:white;font-size:52px;margin:10px 0 8px}
+  .hero-wrap .lede{color:rgba(255,255,255,.65);font-size:18px;margin:0 0 40px}
+  .qcard{background:white;border:1px solid var(--border);border-radius:14px;
+    padding:28px;position:relative;overflow:hidden}
+  .qcard__stripe{position:absolute;top:0;left:0;right:0;height:3px;
+    background:var(--gradient-brand)}
+  .qcard__n{font-family:var(--font-mono);font-weight:800;font-size:42px;
+    color:var(--danger);line-height:1;margin:8px 0 6px}
+  .qcard__lbl{font-family:var(--font-display);font-size:15px;font-weight:600;
+    color:var(--fg-brand)}
+  .icon-box{width:46px;height:46px;border-radius:10px;background:var(--bg-brand-soft);
+    display:inline-flex;align-items:center;justify-content:center;color:var(--dl-green-600)}
+  @media(max-width:900px){
+    .grid4{grid-template-columns:1fr 1fr}
+    .grid2{grid-template-columns:1fr}
+    .grid3{grid-template-columns:1fr 1fr}
+    .hero-wrap h1{font-size:36px}
+  }</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-inner wrap" style="max-width:1200px;margin:0 auto;padding:14px 28px;display:flex;align-items:center;gap:32px">
+    <img src="_design_system/assets/logo-dark.png" style="height:36px" alt="Dashboard Labs">
+    <span style="font-family:var(--font-display);font-size:13px;font-weight:700;color:var(--dl-navy-900)">
+      DASHBOARD LABS &nbsp;<em style="color:var(--dl-green-600);font-style:normal">ANALYTICS</em>
+    </span>
+    <span style="margin-left:auto;font-family:var(--font-display);font-size:12px;color:var(--fg3)">
+      13/12/2025 &ndash; 11/01/2026
+    </span>
+  </div>
+</nav>
+
+
+<section class="hero-wrap">
+  <div class="wrap">
+    <img src="_design_system/assets/logo-light.png" style="height:52px;margin:0 auto 20px" alt="Dashboard Labs">
+    <span class="dl-eyebrow" style="color:#3DD9AC">Análise de E-commerce</span>
+    <h1>Relatório de Performance</h1>
+    <p class="lede">13/12/2025 &ndash; 11/01/2026 &middot; Dados reais de operação</p>
+    <div class="grid4" style="max-width:960px;margin:0 auto"><div class="dl-kpi dl-kpi--inverse"><div class="dl-kpi__label">Receita Total</div><div class="dl-kpi__value">R$ 974.077,28</div></div><div class="dl-kpi dl-kpi--inverse"><div class="dl-kpi__label">Total de Pedidos</div><div class="dl-kpi__value">3.020</div></div><div class="dl-kpi dl-kpi--inverse"><div class="dl-kpi__label">Ticket Médio</div><div class="dl-kpi__value">R$ 322,54</div></div><div class="dl-kpi dl-kpi--inverse"><div class="dl-kpi__label">Clientes Ativos</div><div class="dl-kpi__value">50</div></div></div>
+  </div>
+</section>
+
+<div id="canal">
+<section class="sec">
+  <div class="wrap">
+    <div class="dl-section-head"><span class="dl-eyebrow">Canais de Venda</span><h2 class="dl-section-title">Performance por Canal</h2><p class="dl-section-lede">Comparativo de receita e volume entre e-commerce e loja física.</p></div>
+    <div class="grid2">
+      <div class="chart-box"><canvas id="chartCanal"></canvas></div>
+      <div class="grid2" style="gap:16px"><div class="dl-kpi"><div class="dl-kpi__label">E-commerce</div><div class="dl-kpi__value">R$ 705.486,21</div><div class="dl-kpi__delta is-up">&#x2191; 72.4% da receita</div></div><div class="dl-kpi"><div class="dl-kpi__label">Loja Física</div><div class="dl-kpi__value">R$ 268.591,07</div><div class="dl-kpi__delta is-up">&#x2191; 27.6% da receita</div></div><div class="dl-kpi"><div class="dl-kpi__label">Pedidos E-commerce</div><div class="dl-kpi__value">2155</div></div><div class="dl-kpi"><div class="dl-kpi__label">Pedidos Loja Física</div><div class="dl-kpi__value">865</div></div></div>
+    </div>
+  </div>
+</section></div>
+<div id="tendencia">
+<section class="sec sec--muted">
+  <div class="wrap">
+    <div class="dl-section-head"><span class="dl-eyebrow">Tendência</span><h2 class="dl-section-title">Receita Diária</h2><p class="dl-section-lede">Evolução da receita ao longo do período analisado.</p></div>
+    <div class="chart-box chart-box--tall"><canvas id="chartTend"></canvas></div>
+  </div>
+</section></div>
+<div id="categorias">
+<section class="sec">
+  <div class="wrap">
+    <div class="dl-section-head"><span class="dl-eyebrow">Produtos</span><h2 class="dl-section-title">Receita por Categoria</h2><p class="dl-section-lede">Desempenho de cada categoria do catálogo no período.</p></div>
+    <div class="grid2">
+      <div class="chart-box chart-box--tall"><canvas id="chartCat"></canvas></div>
+      <div>
+        <table class="t">
+          <thead><tr><th>Categoria</th><th>Receita</th><th>Unidades</th><th>Pedidos</th></tr></thead>
+          <tbody>
+            <tr><td>Moda</td><td class="n">R$ 248.124,15</td><td class="n">756</td><td class="n">508</td></tr><tr><td>Áudio</td><td class="n">R$ 137.061,47</td><td class="n">255</td><td class="n">194</td></tr><tr><td>Acessórios</td><td class="n">R$ 120.909,94</td><td class="n">458</td><td class="n">312</td></tr><tr><td>Casa</td><td class="n">R$ 112.704,52</td><td class="n">831</td><td class="n">575</td></tr><tr><td>Cozinha</td><td class="n">R$ 85.059,89</td><td class="n">387</td><td class="n">275</td></tr><tr><td>Beleza</td><td class="n">R$ 66.852,52</td><td class="n">275</td><td class="n">197</td></tr><tr><td>Eletrônicos</td><td class="n">R$ 62.826,28</td><td class="n">355</td><td class="n">251</td></tr><tr><td>Informática</td><td class="n">R$ 61.410,87</td><td class="n">373</td><td class="n">261</td></tr><tr><td>Games</td><td class="n">R$ 50.176,04</td><td class="n">428</td><td class="n">301</td></tr><tr><td>Esporte</td><td class="n">R$ 24.711,59</td><td class="n">179</td><td class="n">126</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section></div>
+<div id="top10">
+<section class="sec sec--muted">
+  <div class="wrap">
+    <div class="dl-section-head"><span class="dl-eyebrow">Ranking</span><h2 class="dl-section-title">Top 10 Produtos</h2><p class="dl-section-lede">Produtos com maior receita gerada no período.</p></div>
+    <table class="t">
+      <thead><tr><th>#</th><th>Produto</th><th>Categoria</th><th>Receita</th><th>Unidades</th></tr></thead>
+      <tbody><tr><td class="rk">1</td><td>Fone de Ouvido Esportivo</td><td><span class="dl-tag">Áudio</span></td><td class="n">R$ 116.462,65</td><td class="n">85</td></tr><tr><td class="rk">2</td><td>Camisa Social</td><td><span class="dl-tag">Moda</span></td><td class="n">R$ 115.794,92</td><td class="n">103</td></tr><tr><td class="rk">3</td><td>Necessaire</td><td><span class="dl-tag">Acessórios</span></td><td class="n">R$ 63.668,43</td><td class="n">57</td></tr><tr><td class="rk">4</td><td>Persiana Vertical</td><td><span class="dl-tag">Casa</span></td><td class="n">R$ 42.310,56</td><td class="n">108</td></tr><tr><td class="rk">5</td><td>Calça Jeans Skinny</td><td><span class="dl-tag">Moda</span></td><td class="n">R$ 41.313,34</td><td class="n">88</td></tr><tr><td class="rk">6</td><td>Condicionador Hidratante</td><td><span class="dl-tag">Beleza</span></td><td class="n">R$ 31.587,75</td><td class="n">71</td></tr><tr><td class="rk">7</td><td>Shorts Jeans</td><td><span class="dl-tag">Moda</span></td><td class="n">R$ 28.431,49</td><td class="n">76</td></tr><tr><td class="rk">8</td><td>Garrafa Térmica 1L</td><td><span class="dl-tag">Cozinha</span></td><td class="n">R$ 21.498,06</td><td class="n">69</td></tr><tr><td class="rk">9</td><td>Notebook Inspiron 15</td><td><span class="dl-tag">Eletrônicos</span></td><td class="n">R$ 20.813,53</td><td class="n">98</td></tr><tr><td class="rk">10</td><td>Vestido Floral</td><td><span class="dl-tag">Moda</span></td><td class="n">R$ 17.842,00</td><td class="n">84</td></tr></tbody>
+    </table>
+  </div>
+</section></div>
+<div id="geo">
+<section class="sec">
+  <div class="wrap">
+    <div class="dl-section-head"><span class="dl-eyebrow">Distribuição</span><h2 class="dl-section-title">Análise Geográfica</h2><p class="dl-section-lede">Top 10 estados por receita gerada (de {len(por_estado)} estados ativos).</p></div>
+    <table class="t">
+      <thead><tr><th>#</th><th>Estado</th><th>Receita</th><th>Pedidos</th><th>Ticket Médio</th></tr></thead>
+      <tbody><tr><td class="rk">1</td><td><strong>AM</strong></td><td class="n">R$ 79.474,67</td><td class="n">240</td><td class="n">R$ 331,14</td></tr><tr><td class="rk">2</td><td><strong>TO</strong></td><td class="n">R$ 71.055,63</td><td class="n">235</td><td class="n">R$ 302,36</td></tr><tr><td class="rk">3</td><td><strong>PA</strong></td><td class="n">R$ 70.003,51</td><td class="n">226</td><td class="n">R$ 309,75</td></tr><tr><td class="rk">4</td><td><strong>AC</strong></td><td class="n">R$ 69.833,78</td><td class="n">190</td><td class="n">R$ 367,55</td></tr><tr><td class="rk">5</td><td><strong>SP</strong></td><td class="n">R$ 60.898,63</td><td class="n">180</td><td class="n">R$ 338,33</td></tr><tr><td class="rk">6</td><td><strong>RS</strong></td><td class="n">R$ 60.727,10</td><td class="n">203</td><td class="n">R$ 299,15</td></tr><tr><td class="rk">7</td><td><strong>GO</strong></td><td class="n">R$ 57.898,59</td><td class="n">169</td><td class="n">R$ 342,60</td></tr><tr><td class="rk">8</td><td><strong>MT</strong></td><td class="n">R$ 57.431,13</td><td class="n">164</td><td class="n">R$ 350,19</td></tr><tr><td class="rk">9</td><td><strong>MG</strong></td><td class="n">R$ 51.955,58</td><td class="n">110</td><td class="n">R$ 472,32</td></tr><tr><td class="rk">10</td><td><strong>CE</strong></td><td class="n">R$ 49.133,23</td><td class="n">171</td><td class="n">R$ 287,33</td></tr></tbody>
+    </table>
+  </div>
+</section></div>
+<div id="precos">
+<section class="sec sec--muted">
+  <div class="wrap">
+    <div class="dl-section-head"><span class="dl-eyebrow">Competitividade</span><h2 class="dl-section-title">Preços vs Concorrentes</h2><p class="dl-section-lede">Comparativo entre nosso preço e a média de cada concorrente (top 20 maior diferença).</p></div>
+    <table class="t">
+      <thead><tr><th>Produto</th><th>Nosso Preço</th><th>Amazon</th><th>Magalu</th><th>Mercado Livre</th><th>Shopee</th><th>Dif. %</th><th>Posição</th></tr></thead>
+      <tbody><tr><td>Tênis Nike Revolution</td><td class="n">R$ 69,90</td><td class="n">R$ 34,95</td><td class="n">R$ 34,95</td><td class="n">R$ 34,95</td><td class="n">R$ 34,95</td><td class="n">+100.0%</td><td><span class="badge badge-dn">Mais caro</span></td></tr><tr><td>Tênis Nike Dunk</td><td class="n">R$ 95,90</td><td class="n">R$ 47,95</td><td class="n">R$ 47,95</td><td class="n">R$ 47,95</td><td class="n">R$ 47,95</td><td class="n">+100.0%</td><td><span class="badge badge-dn">Mais caro</span></td></tr><tr><td>Tênis Adidas Samba</td><td class="n">R$ 43,90</td><td class="n">R$ 21,95</td><td class="n">R$ 21,95</td><td class="n">R$ 21,95</td><td class="n">R$ 21,95</td><td class="n">+100.0%</td><td><span class="badge badge-dn">Mais caro</span></td></tr><tr><td>Tênis Nike Court</td><td class="n">R$ 31,90</td><td class="n">R$ 15,95</td><td class="n">R$ 15,95</td><td class="n">–</td><td class="n">R$ 15,95</td><td class="n">+100.0%</td><td><span class="badge badge-dn">Mais caro</span></td></tr><tr><td>Tênis Nike Air Max</td><td class="n">R$ 68,99</td><td class="n">R$ 34,49</td><td class="n">R$ 34,49</td><td class="n">–</td><td class="n">R$ 34,49</td><td class="n">+100.0%</td><td><span class="badge badge-dn">Mais caro</span></td></tr><tr><td>Tênis Puma Speedcat</td><td class="n">R$ 451,90</td><td class="n">R$ 225,95</td><td class="n">R$ 225,95</td><td class="n">R$ 225,95</td><td class="n">R$ 225,95</td><td class="n">+100.0%</td><td><span class="badge badge-dn">Mais caro</span></td></tr><tr><td>Tênis Puma Future</td><td class="n">R$ 67,90</td><td class="n">R$ 33,95</td><td class="n">R$ 33,95</td><td class="n">R$ 33,95</td><td class="n">–</td><td class="n">+100.0%</td><td><span class="badge badge-dn">Mais caro</span></td></tr><tr><td>Tênis Puma Future</td><td class="n">R$ 123,99</td><td class="n">R$ 61,99</td><td class="n">R$ 61,99</td><td class="n">R$ 61,99</td><td class="n">R$ 61,99</td><td class="n">+100.0%</td><td><span class="badge badge-dn">Mais caro</span></td></tr><tr><td>Tênis Nike Air Max</td><td class="n">R$ 64,90</td><td class="n">–</td><td class="n">R$ 32,45</td><td class="n">R$ 32,45</td><td class="n">R$ 32,45</td><td class="n">+100.0%</td><td><span class="badge badge-dn">Mais caro</span></td></tr><tr><td>Tênis Nike Revolution</td><td class="n">R$ 105,90</td><td class="n">R$ 52,95</td><td class="n">R$ 52,95</td><td class="n">R$ 52,95</td><td class="n">R$ 52,95</td><td class="n">+100.0%</td><td><span class="badge badge-dn">Mais caro</span></td></tr><tr><td>Tênis Adidas Stan Smith</td><td class="n">R$ 197,90</td><td class="n">R$ 98,95</td><td class="n">R$ 98,95</td><td class="n">–</td><td class="n">R$ 98,95</td><td class="n">+100.0%</td><td><span class="badge badge-dn">Mais caro</span></td></tr><tr><td>Tênis Nike Blazer</td><td class="n">R$ 37,90</td><td class="n">R$ 18,95</td><td class="n">R$ 18,95</td><td class="n">R$ 18,95</td><td class="n">R$ 18,95</td><td class="n">+100.0%</td><td><span class="badge badge-dn">Mais caro</span></td></tr><tr><td>Tênis Nike Revolution</td><td class="n">R$ 174,90</td><td class="n">R$ 87,45</td><td class="n">R$ 87,45</td><td class="n">R$ 87,45</td><td class="n">R$ 87,45</td><td class="n">+100.0%</td><td><span class="badge badge-dn">Mais caro</span></td></tr><tr><td>Tênis Puma Suede</td><td class="n">R$ 404,50</td><td class="n">R$ 202,25</td><td class="n">R$ 202,25</td><td class="n">R$ 202,25</td><td class="n">R$ 202,25</td><td class="n">+100.0%</td><td><span class="badge badge-dn">Mais caro</span></td></tr><tr><td>Tênis Adidas Stan Smith</td><td class="n">R$ 38,99</td><td class="n">R$ 19,50</td><td class="n">R$ 19,50</td><td class="n">R$ 19,50</td><td class="n">R$ 19,50</td><td class="n">+99.9%</td><td><span class="badge badge-dn">Mais caro</span></td></tr><tr><td>Blusa de Algodão</td><td class="n">R$ 52,99</td><td class="n">R$ 50,34</td><td class="n">–</td><td class="n">–</td><td class="n">R$ 48,75</td><td class="n">+7.0%</td><td><span class="badge badge-dn">Mais caro</span></td></tr><tr><td>Camisa Social</td><td class="n">R$ 1.149,90</td><td class="n">–</td><td class="n">R$ 1.057,91</td><td class="n">–</td><td class="n">R$ 1.092,40</td><td class="n">+7.0%</td><td><span class="badge badge-dn">Mais caro</span></td></tr><tr><td>Memória RAM 8GB</td><td class="n">R$ 626,00</td><td class="n">R$ 594,70</td><td class="n">R$ 594,70</td><td class="n">R$ 575,92</td><td class="n">R$ 575,92</td><td class="n">+7.0%</td><td><span class="badge badge-dn">Mais caro</span></td></tr><tr><td>Controle Xbox</td><td class="n">R$ 310,90</td><td class="n">R$ 329,55</td><td class="n">R$ 329,55</td><td class="n">R$ 341,99</td><td class="n">–</td><td class="n">-6.8%</td><td><span class="badge badge-up">Mais barato</span></td></tr><tr><td>Placa Mãe B450</td><td class="n">R$ 413,50</td><td class="n">R$ 392,82</td><td class="n">R$ 380,42</td><td class="n">R$ 392,82</td><td class="n">–</td><td class="n">+6.4%</td><td><span class="badge badge-dn">Mais caro</span></td></tr></tbody>
+    </table>
+  </div>
+</section></div>
+<div id="qualidade">
+<section class="sec">
+  <div class="wrap">
+    <div class="dl-section-head"><span class="dl-eyebrow">Qualidade de Dados</span><h2 class="dl-section-title">Problemas em produtos_sujo.csv</h2><p class="dl-section-lede">Inconsistências detectadas na tabela de produtos com dados brutos.</p></div>
+    <div class="grid3"><div class="qcard"><div class="qcard__stripe"></div><div class="icon-box" style="margin-bottom:12px"><i data-lucide="calendar-x" size="22"></i></div><div class="qcard__n">6</div><div class="qcard__lbl">Formato de data inválido</div></div><div class="qcard"><div class="qcard__stripe"></div><div class="icon-box" style="margin-bottom:12px"><i data-lucide="circle-dollar-sign" size="22"></i></div><div class="qcard__n">3</div><div class="qcard__lbl">Formato de preço inconsistente</div></div><div class="qcard"><div class="qcard__stripe"></div><div class="icon-box" style="margin-bottom:12px"><i data-lucide="alert-triangle" size="22"></i></div><div class="qcard__n">1</div><div class="qcard__lbl">Campos nulos/ausentes (marca)</div></div><div class="qcard"><div class="qcard__stripe"></div><div class="icon-box" style="margin-bottom:12px"><i data-lucide="copy" size="22"></i></div><div class="qcard__n">2</div><div class="qcard__lbl">Produtos duplicados</div></div><div class="qcard"><div class="qcard__stripe"></div><div class="icon-box" style="margin-bottom:12px"><i data-lucide="type" size="22"></i></div><div class="qcard__n">2</div><div class="qcard__lbl">Categoria com grafia incorreta</div></div><div class="qcard"><div class="qcard__stripe"></div><div class="icon-box" style="margin-bottom:12px"><i data-lucide="table-2" size="22"></i></div><div class="qcard__n">1</div><div class="qcard__lbl">Nomes de colunas divergentes</div></div></div>
+  </div>
+</section></div>
+
+
+<footer class="dl-footer">
+  <div class="dl-footer__inner">
+    <div class="dl-footer__brand">
+      <img src="_design_system/assets/logo-light.png" alt="Dashboard Labs">
+      <p>Turn your data into insights.<br>dashboardlabs.ca</p>
+    </div>
+    <div class="dl-footer__cols">
+      <div>
+        <h4>Análise</h4>
+        <a href="#canal">Canais de Venda</a>
+        <a href="#tendencia">Tendência</a>
+        <a href="#categorias">Categorias</a>
+      </div>
+      <div>
+        <h4>Produtos</h4>
+        <a href="#top10">Top 10 Produtos</a>
+        <a href="#precos">Preços vs Concorrentes</a>
+      </div>
+      <div>
+        <h4>Dados</h4>
+        <a href="#geo">Distribuição Geográfica</a>
+        <a href="#qualidade">Qualidade de Dados</a>
+      </div>
+    </div>
+  </div>
+  <div class="dl-footer__bar">
+    <span>Dashboard Labs &copy; 2026</span>
+    <span>Gerado por analysis.py</span>
+  </div>
+</footer>
+
+<script src="https://unpkg.com/chart.js@4/dist/chart.umd.min.js"></script>
+<script src="https://unpkg.com/lucide@latest"></script>
+<script>
+lucide.createIcons();
+
+const COLORS = ["#4FB8D9","#137FA3","#8FE5C8","#29C99B","#1F9F66","#0E2747"];
+Chart.defaults.font.family = "'Manrope', 'Helvetica Neue', sans-serif";
+Chart.defaults.color = "#485874";
+
+// Canal donut
+new Chart(document.getElementById("chartCanal"), {
+  type: "doughnut",
+  data: {
+    labels: ["E-commerce", "Loja F\u00edsica"],
+    datasets: [{ data: [705486.21, 268591.07], backgroundColor: ["#29C99B", "#0E2747"],
+      borderWidth: 0, hoverOffset: 6 }]
+  },
+  options: {
+    responsive: true, maintainAspectRatio: false,
+    plugins: {
+      legend: { position: "bottom", labels: { font: { family: "'Manrope'", size: 13 }, padding: 16 } },
+      tooltip: { callbacks: { label: ctx => " R$ " + ctx.parsed.toLocaleString("pt-BR", {minimumFractionDigits:2}) } }
+    }
+  }
+});
+
+// Tendência linha
+new Chart(document.getElementById("chartTend"), {
+  type: "line",
+  data: {
+    labels: ["12/13", "12/14", "12/15", "12/16", "12/17", "12/18", "12/19", "12/20", "12/21", "12/22", "12/23", "12/24", "12/25", "12/26", "12/27", "12/28", "12/29", "12/30", "12/31", "01/01", "01/02", "01/03", "01/04", "01/05", "01/06", "01/07", "01/08", "01/09", "01/10", "01/11"],
+    datasets: [{
+      label: "Receita Diária (R$)",
+      data: [27980.74, 40740.48, 36409.09, 30794.21, 38109.98, 28835.98, 35881.13, 38003.2, 29553.94, 39473.09, 30490.2, 32232.08, 35367.74, 25753.04, 29902.4, 34406.06, 28902.55, 28003.56, 31969.91, 40317.31, 20639.06, 36459.62, 27312.53, 30996.47, 38841.22, 36702.45, 32326.13, 28426.54, 31033.6, 28212.97],
+      borderColor: "#1F9F66", backgroundColor: "#1F9F6622",
+      borderWidth: 2.5, pointRadius: 3, fill: true, tension: 0.3
+    }]
+  },
+  options: {
+    responsive: true, maintainAspectRatio: false,
+    plugins: { legend: { display: false } },
+    scales: {
+      x: { grid: { display: false }, ticks: { maxTicksLimit: 10 } },
+      y: { grid: { color: "#ECEEF3" },
+        ticks: { callback: v => "R$ " + (v/1000).toFixed(0) + "k" } }
+    }
+  }
+});
+
+// Categorias bar horizontal
+new Chart(document.getElementById("chartCat"), {
+  type: "bar",
+  data: {
+    labels: ["Moda", "\u00c1udio", "Acess\u00f3rios", "Casa", "Cozinha", "Beleza", "Eletr\u00f4nicos", "Inform\u00e1tica", "Games", "Esporte"],
+    datasets: [{
+      label: "Receita (R$)",
+      data: [248124.15, 137061.47, 120909.94, 112704.52, 85059.89, 66852.52, 62826.28, 61410.87, 50176.04, 24711.59],
+      backgroundColor: ["#4FB8D9", "#137FA3", "#8FE5C8", "#29C99B", "#1F9F66", "#0E2747", "#2A9BC0", "#3DD9AC", "#1B3A6B", "#C3F1DD"],
+      borderRadius: 6, borderSkipped: false
+    }]
+  },
+  options: {
+    indexAxis: "y",
+    responsive: true, maintainAspectRatio: false,
+    plugins: { legend: { display: false } },
+    scales: {
+      x: { grid: { color: "#ECEEF3" },
+        ticks: { callback: v => "R$ " + (v/1000).toFixed(0) + "k" } },
+      y: { grid: { display: false } }
+    }
+  }
+});
+</script>
+</body>
+</html>

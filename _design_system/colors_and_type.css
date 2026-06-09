@@ -1,0 +1,211 @@
+/* =============================================================
+   Dashboard Labs — Colors & Type
+   Drop-in CSS variables + base typography for any HTML artifact.
+   ============================================================= */
+
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Manrope:wght@400;500;600;700&display=swap");
+
+:root {
+  /* ---------- Brand colors (sampled from the official logo) ---------- */
+  --dl-navy-900:        #0E2747;   /* logo wordmark + bar frame */
+  --dl-navy-800:        #142C53;
+  --dl-navy-700:        #1B3A6B;
+  --dl-blue-600:        #137FA3;   /* darker bar #1 */
+  --dl-blue-500:        #2A9BC0;
+  --dl-blue-400:        #4FB8D9;   /* light blue bar top */
+  --dl-teal-500:        #29C99B;   /* "growth" mid-green bar */
+  --dl-teal-400:        #3DD9AC;
+  --dl-mint-300:        #8FE5C8;
+  --dl-mint-200:        #C3F1DD;   /* pale mint backing bar */
+  --dl-green-700:       #178A53;
+  --dl-green-600:       #1F9F66;   /* darker green bar (right) */
+  --dl-green-500:       #22B574;
+
+  /* ---------- Neutral ramp ---------- */
+  --dl-ink-900:         #0B1A2E;
+  --dl-ink-800:         #16263D;
+  --dl-ink-700:         #2A3B55;
+  --dl-ink-600:         #485874;
+  --dl-ink-500:         #6B7A92;
+  --dl-ink-400:         #93A0B4;
+  --dl-ink-300:         #C2CAD6;
+  --dl-ink-200:         #E1E6EE;
+  --dl-ink-100:         #EEF1F6;
+  --dl-ink-50:          #F6F8FB;
+  --dl-white:           #FFFFFF;
+
+  /* ---------- Semantic surface / fg ---------- */
+  --bg:                 var(--dl-white);
+  --bg-muted:           var(--dl-ink-50);
+  --bg-subtle:          var(--dl-ink-100);
+  --bg-inverse:         var(--dl-navy-900);
+  --bg-brand:           var(--dl-navy-900);
+  --bg-brand-soft:      #EAF6F1;    /* mint wash, used for section blocks */
+
+  --fg1:                var(--dl-ink-900);   /* primary text */
+  --fg2:                var(--dl-ink-700);   /* secondary */
+  --fg3:                var(--dl-ink-500);   /* tertiary / captions */
+  --fg-inverse:         var(--dl-white);
+  --fg-brand:           var(--dl-navy-900);
+  --fg-accent:          var(--dl-green-600);
+  --fg-link:            var(--dl-blue-600);
+
+  --border:             var(--dl-ink-200);
+  --border-strong:      var(--dl-ink-300);
+  --divider:            #ECEEF3;
+
+  /* ---------- Semantic status ---------- */
+  --success:            var(--dl-green-600);
+  --info:               var(--dl-blue-500);
+  --warning:            #E0A21A;
+  --danger:             #D24A4A;
+
+  /* ---------- Chart palette (ordered as in the logo, low→high) ---------- */
+  --chart-1:            var(--dl-blue-400);
+  --chart-2:            var(--dl-blue-600);
+  --chart-3:            var(--dl-mint-300);
+  --chart-4:            var(--dl-teal-500);
+  --chart-5:            var(--dl-green-600);
+  --chart-6:            var(--dl-navy-800);
+
+  /* ---------- Typography ---------- */
+  --font-display:       "Montserrat", "Helvetica Neue", Arial, sans-serif;
+  --font-body:          "Manrope", "Helvetica Neue", Arial, sans-serif;
+  --font-mono:          "JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace;
+
+  --text-xs:            12px;
+  --text-sm:            14px;
+  --text-base:          16px;
+  --text-md:            18px;
+  --text-lg:            20px;
+  --text-xl:            24px;
+  --text-2xl:           30px;
+  --text-3xl:           38px;
+  --text-4xl:           48px;
+  --text-5xl:           64px;
+  --text-6xl:           80px;
+
+  --leading-tight:      1.1;
+  --leading-snug:       1.25;
+  --leading-normal:     1.5;
+  --leading-relaxed:    1.65;
+
+  --tracking-tight:     -0.02em;
+  --tracking-normal:    0;
+  --tracking-wide:      0.04em;
+  --tracking-caps:      0.08em;
+
+  /* ---------- Spacing scale (8pt base, half-step at start) ---------- */
+  --space-1:            4px;
+  --space-2:            8px;
+  --space-3:            12px;
+  --space-4:            16px;
+  --space-5:            24px;
+  --space-6:            32px;
+  --space-7:            48px;
+  --space-8:            64px;
+  --space-9:            96px;
+  --space-10:           128px;
+
+  /* ---------- Radius ---------- */
+  --radius-sm:          4px;
+  --radius-md:          8px;
+  --radius-lg:          12px;
+  --radius-xl:          18px;
+  --radius-2xl:         28px;
+  --radius-pill:        999px;
+
+  /* ---------- Shadow ---------- */
+  --shadow-xs:          0 1px 2px rgba(14,39,71,0.06);
+  --shadow-sm:          0 2px 6px rgba(14,39,71,0.07);
+  --shadow-md:          0 8px 20px rgba(14,39,71,0.08);
+  --shadow-lg:          0 18px 40px rgba(14,39,71,0.12);
+  --shadow-ring:        0 0 0 3px rgba(41,201,155,0.28);  /* focus */
+
+  /* ---------- Motion ---------- */
+  --ease-out:           cubic-bezier(0.22, 0.61, 0.36, 1);
+  --ease-in-out:        cubic-bezier(0.65, 0, 0.35, 1);
+  --dur-fast:           120ms;
+  --dur-base:           200ms;
+  --dur-slow:           360ms;
+
+  /* ---------- Gradients (brand signature: navy→teal→green) ---------- */
+  --gradient-brand:     linear-gradient(90deg, var(--dl-navy-700) 0%, var(--dl-blue-500) 35%, var(--dl-teal-500) 70%, var(--dl-green-600) 100%);
+  --gradient-mint:      linear-gradient(180deg, #F1FAF5 0%, #E0F2EA 100%);
+  --gradient-cool:      linear-gradient(180deg, #F4F9FC 0%, #E5F0F7 100%);
+}
+
+/* =============================================================
+   Base / element styles — drop these on a fresh page
+   ============================================================= */
+html, body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--fg1);
+  font-family: var(--font-body);
+  font-size: var(--text-base);
+  line-height: var(--leading-normal);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  color: var(--fg-brand);
+  margin: 0 0 var(--space-4);
+  letter-spacing: var(--tracking-tight);
+  line-height: var(--leading-tight);
+  font-weight: 700;
+  text-wrap: balance;
+}
+
+h1 { font-size: var(--text-5xl); font-weight: 800; }
+h2 { font-size: var(--text-4xl); }
+h3 { font-size: var(--text-2xl); }
+h4 { font-size: var(--text-xl); }
+h5 { font-size: var(--text-lg); }
+h6 { font-size: var(--text-base); letter-spacing: var(--tracking-caps); text-transform: uppercase; color: var(--fg3); }
+
+p {
+  margin: 0 0 var(--space-4);
+  color: var(--fg2);
+  line-height: var(--leading-relaxed);
+  text-wrap: pretty;
+}
+
+small, .caption {
+  font-size: var(--text-sm);
+  color: var(--fg3);
+  line-height: var(--leading-normal);
+}
+
+a {
+  color: var(--fg-link);
+  text-decoration: none;
+  transition: color var(--dur-fast) var(--ease-out);
+}
+a:hover { color: var(--dl-navy-700); }
+
+code, kbd, pre {
+  font-family: var(--font-mono);
+  font-size: 0.92em;
+}
+
+/* "Eyebrow" — small ALL CAPS label often paired with a section heading */
+.eyebrow {
+  font-family: var(--font-display);
+  font-size: var(--text-xs);
+  letter-spacing: var(--tracking-caps);
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--dl-green-600);
+}
+
+/* Brand gradient text — use sparingly, for one statement per surface */
+.text-gradient {
+  background: var(--gradient-brand);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
